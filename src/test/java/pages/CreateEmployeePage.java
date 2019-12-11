@@ -49,6 +49,9 @@ public class CreateEmployeePage extends BaseUtil {
     @FindBy(how = How.XPATH, using = "//*[@id='content']/table/tbody/tr")
     public WebElement tableBody;
 
+    /*
+     * Waits for the create button to be present,  fills the employee personal info and then it registers it.
+     */
     public void createEmployee(String firstName, String lastName, String email, String employeeId, String employeeLeaderName, String startMonth, String startDay, String StartYear) {
         waitForElementToBePresent(createBtn);
         employeeFirstName.sendKeys(firstName);
@@ -62,6 +65,9 @@ public class CreateEmployeePage extends BaseUtil {
         createBtn.click();
     }
 
+    /*
+     * Navigates from the create employee page to the home page, After the new employee is registered
+     */
     public void goToEmployeeList() {
         waitForElementToBePresent(successfullyCreatedTxt);
         if (successfullyCreatedTxt.isDisplayed() && backLink.isDisplayed()) {
@@ -71,6 +77,15 @@ public class CreateEmployeePage extends BaseUtil {
         waitForElementToBePresent(homePage.EmployeeLogo);
     }
 
+    /*
+     * This method looks for a row that matches with the provided params, and then removes it.
+     * @Param firstName Employee's first name
+     * @Param lastName Employee's last name
+     * @Param startMonth Month that the employee starts
+     * @Param startDay Day that the employee starts
+     * @Param StartYear Year that the employee starts
+     *
+     */
     public void removeEmployeeInfoFromTable(String firstName, String lastName, String startMonth, String startDay, String StartYear) {
         int rowCount = driver.findElements(By.xpath("//*[@id='content']/table")).size();
         String formattedDate = startMonth + "/" + startDay + "/" + StartYear;

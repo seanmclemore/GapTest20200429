@@ -34,10 +34,16 @@ public class HomePage extends BaseUtil {
     @FindBy(how = How.CSS, using = "h1")
     public WebElement txtListingEmployee;
 
+    /*
+     * Verifies that the employee logo and employee info are being displayed
+     */
     public boolean verifyUserLoggedIn(){
     return EmployeeLogo.isDisplayed() && EmployeeInfo.isDisplayed();
     }
 
+    /*
+     * Scrolls down to the create employee link at the end of the home page.
+     */
     public void scrollToCreateEmployeeLink(){
         JavascriptExecutor je= (JavascriptExecutor)driver;
         je.executeScript("arguments[0].scrollIntoView(true);",createEmployeeLink);

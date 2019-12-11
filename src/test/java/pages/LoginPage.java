@@ -21,6 +21,12 @@ public class LoginPage extends BaseUtil {
     @FindBy(how = How.CSS, using = ".submit")
     public WebElement loginBtn;
 
+    /*
+     * Logs in to the home page
+     *
+     * @Param userEmail
+     * @Param userPassword
+     */
     public void login(String userEmail, String userPassword){
         txtUserEmail.sendKeys(userEmail);
         txtUserPassword.sendKeys(userPassword);
