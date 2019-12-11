@@ -1,12 +1,10 @@
 package pages;
 
 import BaseUtil.BaseUtil;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
-import java.util.List;
 
 public class CreateEmployeePage extends BaseUtil {
 
@@ -50,21 +48,17 @@ public class CreateEmployeePage extends BaseUtil {
     @FindBy(how = How.XPATH, using = "//*[@id=\"content\"]/table/tbody")
     public WebElement tableBody;
 
-
-
-    public void createEmployee(String firstName, String lastName, String email, String employeeId, String employeeLeaderName){
+    public void createEmployee(String firstName, String lastName, String email, String employeeId, String employeeLeaderName, String startMonth, String startDay, String StartYear){
         waitForElementToBePresent(createBtn);
         employeeFirstName.sendKeys(firstName);
         employeeLastName.sendKeys(lastName);
         employeeEmail.sendKeys(email);
         employeeIdentification.sendKeys(employeeId);
         employeeLeadersName.sendKeys(employeeLeaderName);
-        employeeStartYear.sendKeys("2014");
-        employeeStartMonth.sendKeys("January");
-        employeeStartDay.sendKeys("21");
+        employeeStartYear.sendKeys(StartYear);
+        employeeStartMonth.sendKeys(startMonth);
+        employeeStartDay.sendKeys(startDay);
         createBtn.click();
-        System.out.println("created user");
-
     }
 
     public void goToEmployeeList(){
@@ -74,12 +68,9 @@ public class CreateEmployeePage extends BaseUtil {
         }
         HomePage homePage = new HomePage();
         waitForElementToBePresent(homePage.EmployeeLogo);
-        System.out.println("im in list");
     }
 
     public void verifyEmployeeInfoInTable(){
-        WebElement baseTable = driver.findElement(By.xpath("//*[@id='content']/table/tbody"));
-        List<WebElement> tableRows = baseTable.findElements(By.tagName("tr"));
-        System.out.println(tableRows);
+       //TODO: didn't complete method
     }
 }

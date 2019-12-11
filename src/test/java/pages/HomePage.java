@@ -39,11 +39,8 @@ public class HomePage extends BaseUtil {
     }
 
     public void scrollToCreateEmployeeLink(){
-        System.out.println(driver.getPageSource());
-        System.out.println("Scroll to create user link");
         JavascriptExecutor je= (JavascriptExecutor)driver;
         je.executeScript("arguments[0].scrollIntoView(true);",createEmployeeLink);
-        System.out.println("end Scroll");
         createEmployeeLink.click();
     }
 }
