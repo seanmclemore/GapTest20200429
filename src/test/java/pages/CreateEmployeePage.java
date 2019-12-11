@@ -7,9 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.Iterator;
-import java.util.List;
-
 public class CreateEmployeePage extends BaseUtil {
 
     public CreateEmployeePage(){
@@ -49,7 +46,7 @@ public class CreateEmployeePage extends BaseUtil {
     @FindBy(how = How.CSS, using = "a[href*='/employees']")
     public WebElement backLink;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"content\"]/table/tbody")
+    @FindBy(how = How.XPATH, using = "//*[@id='content']/table/tbody/tr")
     public WebElement tableBody;
 
     public void createEmployee(String firstName, String lastName, String email, String employeeId, String employeeLeaderName, String startMonth, String startDay, String StartYear) {
@@ -78,16 +75,16 @@ public class CreateEmployeePage extends BaseUtil {
         int rowCount = driver.findElements(By.xpath("//*[@id='content']/table")).size();
         String formattedDate = startMonth + "/" + startDay + "/" + StartYear;
         for (int i = 1; i <= rowCount; i++) {
-            String rowData = driver.findElement(By.xpath("//*[@id='content']/table/tbody/tr[2]")).getText();
+            String rowData = tableBody.getText();
             System.out.println(rowData);
             if (rowData.equalsIgnoreCase(firstName)) {
 
                 for (int j = 1; i <= rowCount; i++) {
-                    String sCellValue2 = driver.findElement(By.xpath("//*[@id='content']/table/tbody/tr")).getText();
+                    String sCellValue2 = tableBody.getText();
                     if (sCellValue2.equalsIgnoreCase(lastName)) {
 
                         for (int k = 1; i <= rowCount; i++) {
-                            String sCellValue3 = driver.findElement(By.xpath("//*[@id='content']/table/tbody/tr")).getText();
+                            String sCellValue3 = tableBody.getText();
                             if (sCellValue3.equalsIgnoreCase(formattedDate)) {
                                 driver.findElement(By.xpath("//*[@id='content']/table/tbody/tr[" + i + "]/td[8]")).click();
                             }
