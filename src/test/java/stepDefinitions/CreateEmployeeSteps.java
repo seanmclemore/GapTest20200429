@@ -33,8 +33,8 @@ public class CreateEmployeeSteps extends BaseUtil {
         Assert.assertTrue(homePage.EmployeeInfo.isDisplayed(),"Logo should be displayed");
     }
 
-    @Then("^Verify the employee info in the home page table ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*)$")
-    public void verifyEmployeeInfoInTable(String firstName, String lastName, String email, String employeeId, String employeeLeaderName, String startMonth, String startDay, String StartYear) {
-        createEmployee.verifyEmployeeInfoInTable();
+    @Then("^Verify the employee info in the home page table ([^\"]*), ([^\"]*), and ([^\"]*) ([^\"]*) ([^\"]*)$")
+    public void verifyEmployeeInfoInTable(String firstName, String lastName, String startMonth, String startDay, String StartYear) {
+        createEmployee.removeEmployeeInfoFromTable(firstName, lastName, startMonth, startDay, StartYear);
     }
 }
