@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("CreateEmployee.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/java/features/CreateUser.feature");
 formatter.feature({
   "line": 1,
   "name": "Creating a new employee",
@@ -7,132 +7,152 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "line": 4,
-  "name": "Verify user logged in",
+  "line": 14,
+  "name": "Delete user User Name: novak and validate user has been deleted",
   "description": "",
-  "id": "creating-a-new-employee;verify-user-logged-in",
+  "id": "creating-a-new-employee;delete-user-user-name:-novak-and-validate-user-has-been-deleted",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 3,
+      "line": 13,
       "name": "@Test2"
     }
   ]
 });
 formatter.step({
-  "line": 5,
-  "name": "I logged in with an \"gap-automation-test@mailinator.com\" and \"12345678\"",
+  "line": 15,
+  "name": "Verify the user info in the home page table \u003cfirstName\u003e and \u003cuserName\u003e",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 6,
-  "name": "I go to create employee link",
+  "line": 16,
+  "name": "Removing user from home page table \u003cuserName\u003e",
   "keyword": "When "
 });
 formatter.step({
-  "line": 7,
-  "name": "I fill employee form typing \u003cfirstName\u003e, \u003clastName\u003e, \u003cemail\u003e, \u003cemployeeId\u003e and \u003cemployeeLeaderName\u003e",
+  "line": 17,
+  "name": "Verify the user info is not in the home page table \u003cfirstName\u003e and \u003cuserName\u003e",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 9,
+  "line": 18,
   "name": "",
   "description": "",
-  "id": "creating-a-new-employee;verify-user-logged-in;",
+  "id": "creating-a-new-employee;delete-user-user-name:-novak-and-validate-user-has-been-deleted;",
   "rows": [
     {
       "cells": [
         "firstName",
-        "lastName",
-        "email",
-        "employeeLeaderName"
+        "userName"
       ],
-      "line": 10,
-      "id": "creating-a-new-employee;verify-user-logged-in;;1"
+      "line": 19,
+      "id": "creating-a-new-employee;delete-user-user-name:-novak-and-validate-user-has-been-deleted;;1"
     },
     {
       "cells": [
-        "a",
-        "b",
-        "c",
-        "d"
+        "Mark",
+        "Novak"
       ],
-      "line": 11,
-      "id": "creating-a-new-employee;verify-user-logged-in;;2"
+      "line": 20,
+      "id": "creating-a-new-employee;delete-user-user-name:-novak-and-validate-user-has-been-deleted;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5026036714,
+  "duration": 6030678295,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 11,
-  "name": "Verify user logged in",
+  "line": 20,
+  "name": "Delete user User Name: novak and validate user has been deleted",
   "description": "",
-  "id": "creating-a-new-employee;verify-user-logged-in;;2",
+  "id": "creating-a-new-employee;delete-user-user-name:-novak-and-validate-user-has-been-deleted;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 3,
+      "line": 13,
       "name": "@Test2"
     }
   ]
 });
 formatter.step({
-  "line": 5,
-  "name": "I logged in with an \"gap-automation-test@mailinator.com\" and \"12345678\"",
+  "line": 15,
+  "name": "Verify the user info in the home page table Mark and Novak",
+  "matchedColumns": [
+    0,
+    1
+  ],
   "keyword": "Given "
 });
 formatter.step({
-  "line": 6,
-  "name": "I go to create employee link",
+  "line": 16,
+  "name": "Removing user from home page table Novak",
+  "matchedColumns": [
+    1
+  ],
   "keyword": "When "
 });
 formatter.step({
-  "line": 7,
-  "name": "I fill employee form typing a, b, c, \u003cemployeeId\u003e and d",
+  "line": 17,
+  "name": "Verify the user info is not in the home page table Mark and Novak",
   "matchedColumns": [
     0,
-    1,
-    2,
-    3
+    1
   ],
   "keyword": "Then "
 });
 formatter.match({
   "arguments": [
     {
-      "val": "gap-automation-test@mailinator.com",
-      "offset": 21
+      "val": "Mark",
+      "offset": 44
     },
     {
-      "val": "12345678",
-      "offset": 62
+      "val": "Novak",
+      "offset": 53
     }
   ],
-  "location": "LoginSteps.i_log_in_with_a_default_user(String,String)"
+  "location": "CreateUserSteps.verifyEmployeeInfoInTable(String,String)"
 });
 formatter.result({
-  "duration": 1925918581,
+  "duration": 178519896,
   "status": "passed"
 });
 formatter.match({
-  "location": "CreateEmployeeSteps.i_shall_be_on_the_Flight_Finder_page()"
+  "arguments": [
+    {
+      "val": "Novak",
+      "offset": 35
+    }
+  ],
+  "location": "CreateUserSteps.RemoveInfoInTable(String)"
 });
 formatter.result({
-  "duration": 361834127,
+  "duration": 293942242,
   "status": "passed"
 });
-formatter.match({});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Mark",
+      "offset": 51
+    },
+    {
+      "val": "Novak",
+      "offset": 60
+    }
+  ],
+  "location": "CreateUserSteps.verifyEmployeeInfoNoAvailableInTable(String,String)"
+});
 formatter.result({
-  "status": "undefined"
+  "duration": 30046673456,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 102692135,
+  "duration": 129256638,
   "status": "passed"
 });
 });

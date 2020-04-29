@@ -17,7 +17,7 @@ public class BaseUtil {
     public static void initialization() {
         System.out.println("Ínitializing driver");
         driver =  new ChromeDriver();
-        driver.navigate().to("https://vacations-management.herokuapp.com/users/sign_in");
+        driver.navigate().to("http://www.way2automation.com/angularjs-protractor/webtables/");
         driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
         driver.manage().window().maximize();
